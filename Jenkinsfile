@@ -21,7 +21,7 @@ pipeline {
       agent any
       
       steps {
-        sh 'ant -f test.xml -v'
+        bat 'ant -f test.xml -v'
         junit 'reports/result.xml'
       }
     }
@@ -29,7 +29,7 @@ pipeline {
       agent any
 	  
       steps {
-        sh 'ant -f build.xml -v'
+        bat 'ant -f build.xml -v'
       }
       post {
         success {
