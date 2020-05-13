@@ -1,5 +1,5 @@
 pipeline {
-  agent none
+  agent any
 
   environment {
     MAJOR_VERSION = 1
@@ -30,11 +30,6 @@ pipeline {
 	  
       steps {
         bat 'ant -f build.xml -v'
-      }
-      post {
-        success {
-          archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
-        }
       }
     }
   }
